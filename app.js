@@ -4,8 +4,6 @@ var path = require("path");
 var fs = require("fs");
 var nconf = require("nconf");
 var ejs = require("ejs");
-var Winston = require("winston");
-var WinstonMongoDB = require("winston-mongodb").MongoDB;
 
 var appPath = path.dirname(require.main.filename);
 var User = require(path.join(appPath, "/modules/User.js"))();
@@ -20,12 +18,9 @@ init();
 
 function init() {
    nconf.file({ file: path.join(__dirname, "config.json") }).argv();
-   Winston.add(WinstonMongoDB, nconf.get("winston"));
 
    var currentIpAddress = require(path.join(appPath, "/modules/Utils.js"))().GetCurrentIPAddress(true)
    var currentPort = nconf.get("port");
-
-   Winston.info("Initializing clock on IP %s:%s", currentIpAddress, currentPort);
 
    User.setSecrets(nconf.get("oAuth:secrets"));
    if (nconf.get("debug")) {
