@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="clockApp" lang="en">
+<html lang="en">
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,6 @@
    <title><%=title%></title>
    <link href="/css/bootstrap.css" rel="stylesheet">
    <link href="/css/jumbotron-narrow.css" rel="stylesheet">
-   <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
 
    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
    <!--[if lt IE 9]>
@@ -18,6 +17,7 @@
     <![endif]-->
    <script>
       var currentUser = <%-JSON.stringify(currentUser)%>;
+      var boardrooms = <%-JSON.stringify(boardrooms)%>;
    </script>
 </head>
 
@@ -57,11 +57,11 @@
       <div class="row marketing">
          <div class="col-lg-12">
             <h4>Configuration</h4>
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" action="/" method="post">
                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Boardroom</label>
+                  <label for="boardroom" class="col-sm-2 control-label">Boardroom</label>
                   <div class="col-sm-10">
-                     <select class="form-control" id="clock">
+                     <select class="form-control" id="boardroom">
                         <option>CA - 6thFloor Main</option>
                         <option>CA - 6thFloor NE</option>
                         <option>CA - 6thFloor North</option>
@@ -72,28 +72,40 @@
                </div>
 
                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Room Free</label>
+                  <label for="contrast" class="col-sm-2 control-label">LCD Contrast</label>
                   <div class="col-sm-10">
-                     <input type="text" class="form-control" id="ipAddress" placeholder="RGB Colour Value">
+                     <input type="range" class="form-control" name="contrast" id="contrast" placeholder="180 - 220" min="180" max="220">
                   </div>
                </div>
 
                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Meeting Immenent</label>
+                  <label for="brightness" class="col-sm-2 control-label">LCD Brightness</label>
                   <div class="col-sm-10">
-                     <input type="text" class="form-control" id="ipAddress" placeholder="RGB Colour Value">
+                     <input type="range" class="form-control" name="brightness" id="brightness" placeholder="180 - 220" min="180" max="220">
                   </div>
                </div>
 
                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Room In Use</label>
+                  <label for="roomFree" class="col-sm-2 control-label">Room Free</label>
                   <div class="col-sm-10">
-                     <input type="text" class="form-control" id="ipAddress" placeholder="RGB Colour Value">
+                     <input type="text" class="form-control" id="roomFree" placeholder="RGB Colour Value">
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <label for="meetingImminent" class="col-sm-2 control-label">Meeting Immenent</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="meetingImminent" placeholder="RGB Colour Value">
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <label for="roomInUse" class="col-sm-2 control-label">Room In Use</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="roomInUse" placeholder="RGB Colour Value">
                   </div>
                </div
-
-
-
+               
                <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
                      <button type="submit" class="btn btn-default">Save Settings</button>
@@ -111,7 +123,8 @@
       </div>
 
    </div>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
    <script src="/js/ui-bootstrap-0.6.0.min.js"></script>
-   <script src="/ngapp.js"></script>
+   <script src="/js/index.js"></script>
 </body>
 </html>

@@ -25,7 +25,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".git\COMMIT_EDITMSG">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\config">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\description">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\HEAD">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\index">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include=".git\ms-persist.xml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="app.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="clock.sdf">
       <SubType>Content</SubType>
     </Content>
     <Content Include="clock.sln">
@@ -44,6 +65,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="modules\User.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="modules\Utils.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="public\css\bootstrap-theme.css">
@@ -73,10 +97,10 @@
     <Content Include="public\fonts\glyphicons-halflings-regular.woff">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="public\js\ui-bootstrap-0.6.0.min.js">
+    <Content Include="public\js\index.js">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="public\ngapp.js">
+    <Content Include="public\js\ui-bootstrap-0.6.0.min.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="README.md">
@@ -85,17 +109,12 @@
     <Content Include="routes\routes.js">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="to-do.txt">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="tokens.txt">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="views\index.html">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include=".git" />
     <Folder Include="modules" />
     <Folder Include="node_modules\" />
     <Folder Include="public\" />

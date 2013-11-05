@@ -6,9 +6,9 @@ var User = require(path.join(path.dirname(require.main.filename), "/modules/User
 // to-do: consider removing User altogether and passing oauth2Client in as a param
 
 module.exports = function (tokens, calendarId, cronPattern) {
-   this.calendarItems = function () {
+   //this.calendarItems = function () {
 
-   }
+   //}
 
    // Set a cron job to fetch updates on a regular basis
    this.startFetches = function (callback) {
@@ -18,17 +18,14 @@ module.exports = function (tokens, calendarId, cronPattern) {
             fetchCalendarItems(callback);
          },
          start: true
-         //timeZone: "America/Toronto"
+         //timeZone: "America/Toronto" // timezone support requires cron plugin - not installed to reduce footprint
       });
       job.start();
    }
 
 
    function fetchCalendarItems(callback) {
-      console.log("fetchCalendarItems: ", calendarId);
-
       var that = this;
-
       User.oauth2Client.credentials = tokens;
       
       googleapis.discover("calendar", "v3").execute(function (err, client) {
@@ -45,19 +42,6 @@ module.exports = function (tokens, calendarId, cronPattern) {
                }
                else {
                   callback(err, {});
-                  //console.log("Err:", err, "\n\nResponse:", response);
-                  //response.items.forEach(function (item, index) {
-                  //   console.log(index);
-                  //   //console.log(
-                  //   //   item.creator.email || "no email",
-                  //   //   item.creator.displayName,
-                  //   //   item.start.dateTime,
-                  //   //   item.end.dateTime,
-                  //   //   item.summary,
-                  //   //   item.description);
-                  //});
-                  //that.pending = response;
-                  
                }
             });
          }

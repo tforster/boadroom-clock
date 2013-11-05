@@ -1,4 +1,6 @@
 # Boardroom Booking Clock #
+**Raspberry Pi + NodeJS + Google Calendar API + 2x16 LCD = Upcoming boardroom bookings displayed**
+
 An Internet enabled clock that shows the next event scheduled for Google Calendar resources like meeting rooms. Intended to run on a headless Raspberry Pi with a serial connected LCD character display. 
 
 The LCD character display shows the current time, the name of the person that has the resource booked next and the minutes remaining until the resource is in use. 
