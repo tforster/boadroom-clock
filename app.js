@@ -26,7 +26,7 @@ function init() {
    if (nconf.get("debug")) {
       app.use(express.errorHandler());
    }
-
+    
    var serialDisplay = nconf.get("serialDisplay");
    var Display = require(path.join(appPath, "/modules/SerialDisplay.js"))(
       serialDisplay.comport,
@@ -42,7 +42,7 @@ function init() {
       var contrast = req.body.contrast;
       var brightness = req.body.brightness;
       //Display.setBrightness(parseInt(brightness));
-      Display.setContrast(parseInt(contrast));
+      //Display.setContrast(parseInt(contrast));
 
       var t = User.currentUser;
 

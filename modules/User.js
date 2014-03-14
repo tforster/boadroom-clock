@@ -2,7 +2,23 @@ var googleapis = require("googleapis");
 var nconf = require("nconf");
 var OAuth2Client = googleapis.OAuth2Client;
 
+/*
+From: https://developers.google.com/+/web/api/javascript#gapiauthchecksessionstatesessionparams_callback
 
+gapi.auth.checkSessionState(sessionParams, callback)
+sessionParams - type: object
+An object, which must include the following parameters.
+client_id - type: string
+The client ID of the app. Required.
+session_state - type: string
+The session_state from the OAuth 2.0 token or null if you want to only determine if the user is signed in to Google.
+
+
+
+
+
+
+*/
 
 module.exports = function () {
    this.oauth2Client = new OAuth2Client();

@@ -1,29 +1,29 @@
 {
-    "name": "boardroom-clock",
-    "version": "0.0.1",
-    "private": true,
-    "author": "Troy Forster <troy.forster@gmail.com>",
-    "description": "",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/tforster/boadroom-clock.git"
-    },
-    "keywords": [
-        "raspberry pi",
-        "nodejs",
-        "google calendar api",
-        "calendar",
-        "booking"
-    ],
-    "scripts": {
-        "start": "node app.js"
-    },
-    "dependencies": {
-        "googleapis": "0.2.x",
-        "express": "3.4.0",
-        "nconf": "0.6.x",
-        "ejs": "0.8.x",
-        "cron": "~1.0.1",
-        "serialport": "~1.2.3"
-    }
+  "name": "boardroom-clock",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Troy Forster <troy.forster@gmail.com>",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tforster/boadroom-clock.git"
+  },
+  "keywords": [
+    "raspberry pi",
+    "nodejs",
+    "google calendar api",
+    "calendar",
+    "booking"
+  ],
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "googleapis": "0.2.x",
+    "express": "3.4.0",
+    "nconf": "0.6.x",
+    "ejs": "0.8.x",
+    "cron": "1.0.1",
+    "serialport": "~1.2.3"
+  }
 }

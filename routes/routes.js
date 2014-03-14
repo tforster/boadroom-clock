@@ -1,6 +1,5 @@
 var path = require("path");
 var User = require(path.join(path.dirname(require.main.filename), "/modules/User.js"))();
-var SerialDisplay = require(path.join(path.dirname(require.main.filename), "/modules/SerialDisplay.js"))();
 
 module.exports = function (app) {
    app.get("/", function (req, res) {
@@ -10,9 +9,6 @@ module.exports = function (app) {
       res.render("index", pageObj);
    });
    
-
-
-
    app.get("/about", function (req, res) {
       var pageObj = { "title": "about", "key": "val", "currentUser": User.currentUser, "googleUrl": User.redirectUrl() }
       res.render("index", pageObj);
